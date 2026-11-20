@@ -1,20 +1,27 @@
 package org.example;
 
-public class Bid {
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class Bid implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private static final DateTimeFormatter DISPLAY_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
     private String bidId;
     private String lotId;
     private String bidderId;
     private double amount;
-    private String dateTime;
+    private LocalDateTime dateTime;
     private boolean accepted;
 
-    public Bid(String bidId, String lotId, String bidderId, double amount, String dateTime, boolean accepted) {
+    public Bid(String bidId, String lotId, String bidderId, double amount, LocalDateTime dateTime) {
         this.bidId = bidId;
         this.lotId = lotId;
         this.bidderId = bidderId;
         this.amount = amount;
         this.dateTime = dateTime;
-        this.accepted = accepted;
+        this.accepted = false;
     }
 
     public String getBidId() {
@@ -49,11 +56,11 @@ public class Bid {
         this.amount = amount;
     }
 
-    public String getDateTime() {
+    public LocalDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(String dateTime) {
+    public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
     }
 
@@ -65,8 +72,12 @@ public class Bid {
         this.accepted = accepted;
     }
 
+    public String getFormattedDateTime() {
+        return dateTime == null ? "" : dateTime.format(DISPLAY_FORMAT);
+    }
+
     @Override
     public String toString() {
-
+        return String.format("%s  €%.2f  %s%s", bidId, amount, getFormattedDateTime(), accepted ? "  [WINNING BID]" : "");
     }
 }

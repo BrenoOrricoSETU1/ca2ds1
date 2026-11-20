@@ -1,18 +1,26 @@
 package org.example;
 
-public class AuctionLot {
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class AuctionLot implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private static final DateTimeFormatter DISPLAY_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
     private String lotId;
     private String title;
     private String description;
     private String type;
-    private String year;
+    private int year;
     private double price;
     private String imageUrl;
     private boolean sold;
-    private String saleDate;
+    private LocalDateTime saleDate;
     private double finalPrice;
+    private final CustomLinkedList<Bid> bids = new CustomLinkedList<>();
 
-    public AuctionLot(String lotId, String title, String description, String type, String year, double price, String imageUrl, boolean sold, String saleDate, double finalPrice) {
+    public AuctionLot(String lotId, String title, String description, String type, int year, double price, String imageUrl) {
         this.lotId = lotId;
         this.title = title;
         this.description = description;
@@ -20,9 +28,9 @@ public class AuctionLot {
         this.year = year;
         this.price = price;
         this.imageUrl = imageUrl;
-        this.sold = sold;
-        this.saleDate = saleDate;
-        this.finalPrice = finalPrice;
+        this.sold = false;
+        this.saleDate = null;
+        this.finalPrice = 0;
     }
 
     public String getLotId() {
@@ -57,11 +65,11 @@ public class AuctionLot {
         this.type = type;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
@@ -85,28 +93,73 @@ public class AuctionLot {
         return sold;
     }
 
-    public void setSold(boolean sold) {
-        this.sold = sold;
-    }
-
-    public String getSaleDate() {
+    public LocalDateTime getSaleDate() {
         return saleDate;
-    }
-
-    public void setSaleDate(String saleDate) {
-        this.saleDate = saleDate;
     }
 
     public double getFinalPrice() {
         return finalPrice;
     }
 
-    public void setFinalPrice(double finalPrice) {
-        this.finalPrice = finalPrice;
+    public CustomLinkedList<Bid> getBids() {
+        return bids;
+    }
+
+    public Bid getHighestBid() {
+        Bid highest = null;
+        for (Bid bid : bids) {
+            if (highest == null || bid.getAmount() > highest.getAmount()) {
+                highest = bid;
+            }
+        }
+        return highest;
+    }
+
+    public boolean canAcceptBid(double amount) {
+        if (sold || amount <= 0) {
+            return false;
+        }
+        Bid highest = getHighestBid();
+        return highest == null || amount > highest.getAmount();
+    }
+
+    public boolean addBid(Bid bid) {
+        if (!canAcceptBid(bid.getAmount())) {
+            return false;
+        }
+        bids.add(bid);
+        return true;
+    }
+
+    public boolean removeBid(Bid bid) {
+        if (bid.isAccepted()) {
+            return false;
+        }
+        return bids.remove(bid);
+    }
+
+    public Bid sell(LocalDateTime when) {
+        if (sold) {
+            return null;
+        }
+        Bid winning = getHighestBid();
+        if (winning == null) {
+            return null;
+        }
+        winning.setAccepted(true);
+        sold = true;
+        saleDate = when;
+        finalPrice = winning.getAmount();
+        return winning;
+    }
+
+    public String getFormattedSaleDate() {
+        return saleDate == null ? "" : saleDate.format(DISPLAY_FORMAT);
     }
 
     @Override
     public String toString() {
-
+        String status = sold ? String.format("SOLD €%.2f", finalPrice) : "Available";
+        return String.format("%s - %s (%s, %d) Guide €%.2f [%s]", lotId, title, type, year, price, status);
     }
 }
