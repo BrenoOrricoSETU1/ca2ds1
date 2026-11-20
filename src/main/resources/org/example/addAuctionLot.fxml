@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="260.0" layoutY="14.0" text="Add Auction Lot" />
+      <Label layoutX="22.0" layoutY="58.0" text="Title">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label layoutX="22.0" layoutY="99.0" text="Type">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label layoutX="22.0" layoutY="140.0" text="Year">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label layoutX="22.0" layoutY="179.0" text="Price">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label layoutX="7.0" layoutY="217.0" text="Image URL">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label layoutX="7.0" layoutY="256.0" text="Description">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <ComboBox layoutX="79.0" layoutY="100.0" prefHeight="25.0" prefWidth="149.0" AnchorPane.bottomAnchor="322.0" />
+      <TextField layoutX="79.0" layoutY="59.0" />
+      <TextField layoutX="79.0" layoutY="141.0" />
+      <TextField layoutX="80.0" layoutY="180.0" />
+      <TextField layoutX="80.0" layoutY="218.0" />
+      <TextArea layoutX="14.0" layoutY="283.0" prefHeight="87.0" prefWidth="573.0" />
+      <Button layoutX="275.0" layoutY="372.0" mnemonicParsing="false" text="Add Lot" />
+      <Button layoutX="12.0" layoutY="413.0" mnemonicParsing="false" text="Back" />
+      <Label layoutX="222.0" layoutY="400.0" prefHeight="27.0" prefWidth="165.0" />
+      <Separator layoutX="201.0" layoutY="30.0" prefWidth="200.0" />
+      <Label layoutX="248.0" layoutY="397.0" prefHeight="47.0" prefWidth="113.0" />
+   </children>
+</AnchorPane>
