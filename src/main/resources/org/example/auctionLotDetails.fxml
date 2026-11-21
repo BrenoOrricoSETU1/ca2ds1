@@ -12,8 +12,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="588.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="588.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AuctionLotDetailsController">
    <children>
       <ImageView fitHeight="295.0" fitWidth="368.0" layoutX="14.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="462.0" layoutY="14.0" text="Auction Lot Details" />
@@ -52,7 +51,7 @@
       <Separator layoutY="358.0" prefHeight="3.0" prefWidth="1024.0" />
       <Button layoutX="869.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Sell Lot" />
       <Label layoutX="486.0" layoutY="368.0" text="Bid History" />
-      <Button layoutX="17.0" layoutY="549.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="backButton" layoutX="17.0" layoutY="549.0" mnemonicParsing="false" onAction="#backToMain" text="Back" />
       <Separator layoutX="451.0" layoutY="384.0" prefHeight="3.0" prefWidth="128.0" />
       <TableView layoutX="17.0" layoutY="387.0" prefHeight="158.0" prefWidth="987.0">
         <columns>

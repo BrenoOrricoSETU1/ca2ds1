@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AddBidController">
    <children>
       <Label layoutX="336.0" layoutY="14.0" text="Add Bid" />
       <Separator layoutX="258.0" layoutY="30.0" prefWidth="200.0" />
@@ -18,7 +18,7 @@
       <ComboBox layoutX="116.0" layoutY="142.0" prefHeight="28.0" prefWidth="160.0" promptText="Select Bidder" />
       <Label layoutX="116.0" layoutY="189.0" prefHeight="28.0" prefWidth="160.0" text="Label" />
       <TextField layoutX="116.0" layoutY="231.0" prefHeight="28.0" prefWidth="160.0" />
-      <Button layoutX="180.0" layoutY="266.0" mnemonicParsing="false" text="Bid" />
+      <Button layoutX="180.0" layoutY="266.0" mnemonicParsing="false" onAction="#bid" text="Bid" />
       <Label layoutX="23.0" layoutY="84.0" prefHeight="28.0" prefWidth="70.0" text="Auction Lot:" />
       <Label layoutX="36.0" layoutY="142.0" prefHeight="28.0" prefWidth="43.0" text="Bidder:" />
       <Label layoutX="22.0" layoutY="189.0" prefHeight="28.0" prefWidth="70.0" text="Current Bid:" />
@@ -43,7 +43,7 @@
             </Label>
          </children>
       </VBox>
-      <Button layoutX="14.0" layoutY="409.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="409.0" mnemonicParsing="false" onAction="#backToMain" text="Back" />
       <Label layoutX="116.0" layoutY="308.0" prefHeight="45.0" prefWidth="160.0" />
    </children>
 </AnchorPane>

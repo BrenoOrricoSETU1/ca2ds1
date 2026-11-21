@@ -12,34 +12,34 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.HomePageController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Load" />
-                  <MenuItem mnemonicParsing="false" text="Exit" />
+              <MenuItem mnemonicParsing="false" onAction="#save" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#load" text="Load" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Auction Lots">
             <items>
-              <MenuItem mnemonicParsing="false" text="Add Lot" />
-                  <MenuItem mnemonicParsing="false" text="Search" />
-                  <MenuItem mnemonicParsing="false" text="View Lots" />
+              <MenuItem mnemonicParsing="false" onAction="#openAddAuctionLot" text="Add Lot" />
+                  <MenuItem mnemonicParsing="false" onAction="#openSearchAuctionLot" text="Search" />
+                  <MenuItem mnemonicParsing="false" onAction="#openViewAuctionLot" text="View Lots" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Bidders">
             <items>
-              <MenuItem mnemonicParsing="false" text="Add Bidder" />
-                  <MenuItem mnemonicParsing="false" text="Search" />
-                  <MenuItem mnemonicParsing="false" text="View Bidders" />
+              <MenuItem mnemonicParsing="false" onAction="#openAddBidder" text="Add Bidder" />
+                  <MenuItem mnemonicParsing="false" onAction="#openSearchBidder" text="Search" />
+                  <MenuItem mnemonicParsing="false" onAction="#openViewBidders" text="View Bidders" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Bids">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Make a Bid" />
+                  <MenuItem mnemonicParsing="false" onAction="#openMakeABid" text="Make a Bid" />
                </items>
             </Menu>
         </menus>
