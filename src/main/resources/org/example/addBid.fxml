@@ -14,29 +14,29 @@
    <children>
       <Label layoutX="336.0" layoutY="14.0" text="Add Bid" />
       <Separator layoutX="258.0" layoutY="30.0" prefWidth="200.0" />
-      <ComboBox layoutX="116.0" layoutY="84.0" prefHeight="28.0" prefWidth="160.0" promptText="Select Lot" />
-      <ComboBox layoutX="116.0" layoutY="142.0" prefHeight="28.0" prefWidth="160.0" promptText="Select Bidder" />
-      <Label layoutX="116.0" layoutY="189.0" prefHeight="28.0" prefWidth="160.0" text="Label" />
-      <TextField layoutX="116.0" layoutY="231.0" prefHeight="28.0" prefWidth="160.0" />
-      <Button layoutX="180.0" layoutY="266.0" mnemonicParsing="false" onAction="#bid" text="Bid" />
+      <ComboBox fx:id="selectLotComboBox" layoutX="116.0" layoutY="84.0" prefHeight="28.0" prefWidth="160.0" promptText="Select Lot" />
+      <ComboBox fx:id="selectBidderComboBox" layoutX="116.0" layoutY="142.0" prefHeight="28.0" prefWidth="160.0" promptText="Select Bidder" />
+      <Label fx:id="currentBidLabel" layoutX="116.0" layoutY="189.0" prefHeight="28.0" prefWidth="160.0" text="Label" />
+      <TextField fx:id="newBidField" layoutX="116.0" layoutY="231.0" prefHeight="28.0" prefWidth="160.0" />
+      <Button layoutX="180.0" layoutY="266.0" mnemonicParsing="false" onAction="#addBid" text="Bid" />
       <Label layoutX="23.0" layoutY="84.0" prefHeight="28.0" prefWidth="70.0" text="Auction Lot:" />
       <Label layoutX="36.0" layoutY="142.0" prefHeight="28.0" prefWidth="43.0" text="Bidder:" />
       <Label layoutX="22.0" layoutY="189.0" prefHeight="28.0" prefWidth="70.0" text="Current Bid:" />
       <Label layoutX="30.0" layoutY="230.0" prefHeight="28.0" prefWidth="54.0" text="New Bid:" />
       <VBox layoutX="379.0" layoutY="74.0" prefHeight="255.0" prefWidth="283.0">
          <children>
-            <ImageView fitHeight="158.0" fitWidth="283.0" pickOnBounds="true" preserveRatio="true" />
-            <Label text="Title">
+            <ImageView fx:id="lotImage" fitHeight="158.0" fitWidth="283.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lotTitleLabel" text="Title">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label text="Current Bid">
+            <Label fx:id="currentBidLabel" text="Current Bid">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label text="Status">
+            <Label fx:id="statusLabel" text="Status">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -44,6 +44,6 @@
          </children>
       </VBox>
       <Button fx:id="backButton" layoutX="14.0" layoutY="409.0" mnemonicParsing="false" onAction="#backToMain" text="Back" />
-      <Label layoutX="116.0" layoutY="308.0" prefHeight="45.0" prefWidth="160.0" />
+      <Label fx:id="feedbackLabel" layoutX="116.0" layoutY="308.0" prefHeight="45.0" prefWidth="160.0" />
    </children>
 </AnchorPane>
