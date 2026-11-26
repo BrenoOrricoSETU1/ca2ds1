@@ -47,7 +47,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <TextArea fx:id="descriptionTextArea" layoutX="398.0" layoutY="249.0" prefHeight="97.0" prefWidth="234.0" />
+      <TextArea fx:id="descriptionTextArea" editable="false" layoutX="398.0" layoutY="249.0" prefHeight="97.0" prefWidth="234.0" />
       <Separator layoutY="358.0" prefHeight="3.0" prefWidth="1024.0" />
       <Button layoutX="869.0" layoutY="100.0" mnemonicParsing="false" onAction="#sellLot" prefHeight="25.0" prefWidth="68.0" text="Sell Lot" />
       <Label layoutX="486.0" layoutY="368.0" text="Bid History" />
@@ -69,7 +69,7 @@
       <Button fx:id="editButton" layoutX="869.0" layoutY="162.0" mnemonicParsing="false" onAction="#openEditLot" prefHeight="25.0" prefWidth="68.0" text="Edit Lot" />
       <Button layoutX="856.0" layoutY="224.0" mnemonicParsing="false" onAction="#withdrawLot" prefHeight="25.0" prefWidth="94.0" text="Withdraw Lot" />
       <Label fx:id="feedbackLabel" layoutX="810.0" layoutY="249.0" prefHeight="54.0" prefWidth="200.0" />
-      <ComboBox fx:id="selectLotComboBox" layoutX="398.0" layoutY="38.0" prefHeight="25.0" prefWidth="234.0" promptText="Select Auction Lot">
+      <ComboBox fx:id="selectLotComboBox" layoutX="398.0" layoutY="38.0" onAction="#selectLot" prefHeight="25.0" prefWidth="234.0" promptText="Select Auction Lot">
          <effect>
             <Blend />
          </effect>
