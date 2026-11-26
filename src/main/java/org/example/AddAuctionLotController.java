@@ -97,7 +97,6 @@ public class AddAuctionLotController {
             int year = date.getYear();
 
             App.auctionSystem.addLot(title, description, type, year, price, imagePath);
-
             feedbackLabel.setText("Lot added successfully");
 
         }catch (NumberFormatException e){

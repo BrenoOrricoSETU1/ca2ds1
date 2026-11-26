@@ -14,30 +14,30 @@
 
 <AnchorPane prefHeight="588.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AuctionLotDetailsController">
    <children>
-      <ImageView fitHeight="295.0" fitWidth="368.0" layoutX="14.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageViewLot" fitHeight="295.0" fitWidth="368.0" layoutX="14.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="462.0" layoutY="14.0" text="Auction Lot Details" />
       <Separator layoutX="412.0" layoutY="31.0" prefWidth="200.0" />
-      <Label layoutX="398.0" layoutY="86.0" text="Type">
+      <Label fx:id="typeLabel" layoutX="398.0" layoutY="86.0" text="Type">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <Label layoutX="398.0" layoutY="113.0" text="Status">
+      <Label fx:id="statusLabel" layoutX="398.0" layoutY="113.0" text="Status">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <Label layoutX="398.0" layoutY="140.0" text="Year">
+      <Label fx:id="yearLabel" layoutX="398.0" layoutY="140.0" text="Year">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <Label layoutX="398.0" layoutY="167.0" text="Guide Price">
+      <Label fx:id="priceLabel" layoutX="398.0" layoutY="167.0" text="Guide Price">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <Label layoutX="398.0" layoutY="194.0" text="Current Bid">
+      <Label fx:id="currentBidLabel" layoutX="398.0" layoutY="194.0" text="Current Bid">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -47,32 +47,33 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <TextArea layoutX="398.0" layoutY="249.0" prefHeight="97.0" prefWidth="234.0" />
+      <TextArea fx:id="descriptionTextArea" layoutX="398.0" layoutY="249.0" prefHeight="97.0" prefWidth="234.0" />
       <Separator layoutY="358.0" prefHeight="3.0" prefWidth="1024.0" />
-      <Button layoutX="869.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Sell Lot" />
+      <Button layoutX="869.0" layoutY="100.0" mnemonicParsing="false" onAction="#sellLot" prefHeight="25.0" prefWidth="68.0" text="Sell Lot" />
       <Label layoutX="486.0" layoutY="368.0" text="Bid History" />
       <Button fx:id="backButton" layoutX="17.0" layoutY="549.0" mnemonicParsing="false" onAction="#backToMain" text="Back" />
       <Separator layoutX="451.0" layoutY="384.0" prefHeight="3.0" prefWidth="128.0" />
-      <TableView layoutX="17.0" layoutY="387.0" prefHeight="158.0" prefWidth="987.0">
+      <TableView fx:id="bidHistoryTable" layoutX="17.0" layoutY="387.0" prefHeight="158.0" prefWidth="987.0">
         <columns>
-          <TableColumn prefWidth="259.0" text="Bidder ID" />
-          <TableColumn minWidth="0.0" prefWidth="479.0" text="Amount" />
-            <TableColumn prefWidth="248.0" text="Date/Time" />
+          <TableColumn fx:id="bidderIdColumn" prefWidth="259.0" text="Bidder ID" />
+          <TableColumn fx:id="amountColumn" minWidth="0.0" prefWidth="479.0" text="Amount" />
+            <TableColumn fx:id="dateColumn" prefWidth="248.0" text="Date" />
         </columns>
       </TableView>
-      <Label layoutX="398.0" layoutY="63.0" text="Title">
+      <Label fx:id="titleLabel" layoutX="398.0" layoutY="63.0" text="Title">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
       <Separator layoutX="804.0" layoutY="81.0" orientation="VERTICAL" prefHeight="200.0" />
-      <Button layoutX="869.0" layoutY="162.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Edit Lot" />
-      <Button layoutX="856.0" layoutY="224.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Withdraw Lot" />
-      <Label layoutX="810.0" layoutY="249.0" prefHeight="54.0" prefWidth="200.0" text="sold or not" />
-      <ComboBox layoutX="398.0" layoutY="38.0" prefHeight="25.0" prefWidth="234.0" promptText="Select Auction Lot">
+      <Button fx:id="editButton" layoutX="869.0" layoutY="162.0" mnemonicParsing="false" onAction="#openEditLot" prefHeight="25.0" prefWidth="68.0" text="Edit Lot" />
+      <Button layoutX="856.0" layoutY="224.0" mnemonicParsing="false" onAction="#withdrawLot" prefHeight="25.0" prefWidth="94.0" text="Withdraw Lot" />
+      <Label fx:id="feedbackLabel" layoutX="810.0" layoutY="249.0" prefHeight="54.0" prefWidth="200.0" />
+      <ComboBox fx:id="selectLotComboBox" layoutX="398.0" layoutY="38.0" prefHeight="25.0" prefWidth="234.0" promptText="Select Auction Lot">
          <effect>
             <Blend />
          </effect>
       </ComboBox>
+      <Button layoutX="910.0" layoutY="549.0" mnemonicParsing="false" onAction="#withdrawBid" text="Withdraw Bid" />
    </children>
 </AnchorPane>
