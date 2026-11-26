@@ -13,6 +13,7 @@ import java.io.IOException;
  */
 public class App extends Application {
 
+    public static AuctionSystem auctionSystem = new AuctionSystem();
     public static Stage stage;
 
     @Override
