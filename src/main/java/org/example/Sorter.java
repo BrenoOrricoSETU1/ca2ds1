@@ -1,7 +1,7 @@
 package org.example;
-//SORRY THIS IS A MESS
 public class Sorter {
 
+    // Sorts auction lots with selection sort by title, year, type or price
     public static CustomLinkedList<AuctionLot> sortLots(CustomLinkedList<AuctionLot> list, String sortBy, boolean ascending) {
         AuctionLot[] array = new AuctionLot[list.size()];
         int count = 0;
@@ -50,6 +50,7 @@ public class Sorter {
         }
     }
 
+    // Sorts bidders with selection sort by name or address
     public static CustomLinkedList<Bidder> sortBidders(CustomLinkedList<Bidder> list, String sortBy, boolean ascending) {
         Bidder[] array = new Bidder[list.size()];
         int count = 0;
@@ -89,6 +90,7 @@ public class Sorter {
         }
     }
 
+    // Sorts bids  from highest amount to lowest
     public static CustomLinkedList<Bid> sortBidsByAmountDescending(CustomLinkedList<Bid> list) {
         Bid[] array = new Bid[list.size()];
         int count = 0;
@@ -114,6 +116,7 @@ public class Sorter {
         return sorted;
     }
 
+    // Sorts bids with insertion sort from oldest to newest
     public static CustomLinkedList<Bid> sortBidsByDateAscending(CustomLinkedList<Bid> list) {
         Bid[] array = new Bid[list.size()];
         int count = 0;
