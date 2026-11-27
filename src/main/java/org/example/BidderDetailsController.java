@@ -21,7 +21,7 @@ public class BidderDetailsController {
     private Button editButton;
 
     @FXML
-    private ComboBox<String> selectedBidderComboBox;
+    private ComboBox<String> selectBidderComboBox;
 
     @FXML
     private TextField nameField;
@@ -56,12 +56,13 @@ public class BidderDetailsController {
     @FXML
     private void initialize() {
         for(Bidder bidder : App.auctionSystem.getAllBidders()){
-            selectedBidderComboBox.getItems().add(bidder.getName() + " - ID: " + bidder.getBidderId());
+            selectBidderComboBox.getItems().add(bidder.getName() + " - ID: " + bidder.getBidderId());
         }
 
         lotIdColumn.setCellValueFactory(new PropertyValueFactory<>("lotId"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         dateTimeColumn.setCellValueFactory(new PropertyValueFactory<>("formattedDateTime"));
+
         //find the title of lot using its id
         lotTitleColumn.setCellValueFactory(cellData -> {
             Bid bid = cellData.getValue();
@@ -84,12 +85,12 @@ public class BidderDetailsController {
 
     @FXML
     private void selectBidder(){
-        if(selectedBidderComboBox.getItems() == null){
+        if(selectBidderComboBox.getItems() == null){
             return;
         }
 
         //get id of selected bidder
-        String bidderId = selectedBidderComboBox.getValue().split(" - ")[0];
+        String bidderId = selectBidderComboBox.getValue().split(" - ")[0];
 
         //find the bidder using auction system hashing
         Bidder bidder = App.auctionSystem.getBidder(bidderId);

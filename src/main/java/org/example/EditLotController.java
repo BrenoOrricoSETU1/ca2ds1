@@ -146,9 +146,6 @@ public class EditLotController {
         }
     }
 
-
-
-
     @FXML
     private Button backButton;
 
@@ -167,9 +164,5 @@ public class EditLotController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @FXML
-    public void saveChanges() {
     }
 }

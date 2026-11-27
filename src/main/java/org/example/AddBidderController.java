@@ -60,7 +60,7 @@ public class AddBidderController {
 
         //Adding Bidder to auction system
         Bidder bidder = App.auctionSystem.addBidder(name,address,email,phone);
-        feedbackLabel.setText("Successfully added bidder. ID: " + bidder.getBidderId() + " Name: " + bidder.getName() + " Email: " + bidder.getName());
+        feedbackLabel.setText("Successfully added bidder. ID: " + bidder.getBidderId() + " - Name: " + bidder.getName());
 
         //Clear the fields after adding the bidder
         nameField.clear();

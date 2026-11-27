@@ -69,7 +69,7 @@
       <Button fx:id="backButton" layoutX="14.0" layoutY="442.0" mnemonicParsing="false" onAction="#backToMain" text="Back" />
       <Label layoutX="222.0" layoutY="400.0" prefHeight="27.0" prefWidth="165.0" />
       <Separator layoutX="201.0" layoutY="30.0" prefWidth="200.0" />
-      <ComboBox fx:id="selectTypeComboBox" layoutX="387.0" layoutY="59.0" onAction="#selectType" prefHeight="26.0" prefWidth="160.0" promptText="Select Type" />
+      <ComboBox fx:id="selectTypeComboBox" layoutX="387.0" layoutY="59.0" prefHeight="26.0" prefWidth="160.0" promptText="Select Type" />
       <TextField fx:id="titleField" layoutX="80.0" layoutY="99.0" prefHeight="26.0" prefWidth="160.0" />
       <Label layoutX="9.0" layoutY="63.0" text="Select Lot" />
       <Label fx:id="feedbackLabel" layoutX="186.0" layoutY="401.0" prefHeight="55.0" prefWidth="278.0" />
